@@ -1,0 +1,27 @@
+// Base Styles
+@import "reset";
+@import "setting";
+@import "variables";
+@import "typography";
+@import "media-queries";
+@import "container";
+@import "helpers";
+@import "functions";
+@import "skeleton";
+
+// Page Styles
+@import "../pages/MainPage/index.scss";
+// @import "../pages/DetailsPage/index.scss";
+
+// Component Styles
+@import "../components/HeroHeader/index.scss";
+// @import "../components/RoomCard/index.scss";
+// @import "../components/MosaicHeader/index.scss";
+// @import "../components/RoomInfo/index.scss";
+// @import "../components/RoomAmenities/index.scss";
+// @import "../components/LineBreak/index.scss";
+// @import "../components/BookingCard/index.scss";
+// @import "../components/BookingCard/RoomPrice.scss";
+// @import "../components/BookingCard/BookingForm.scss";
+// @import "../components/BookingCard/TotalAmount.scss";
+// @import "../components/Modal/index.scss";
