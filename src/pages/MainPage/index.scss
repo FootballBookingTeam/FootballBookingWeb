@@ -15,11 +15,11 @@
   }
 }
 
-.room-cards {
+.turf-cards {
   margin-bottom: rem(60);
 }
 
-.room-cards__list {
+.turf-cards__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: rem(58) rem(22);
