@@ -11,7 +11,7 @@ import DefaultLayout from './layout/DefaultLayout';
 import TurfManagement from './pages/AdminPage/TurfManagement';
 const publicRoutes = [
     { path: '/', component: MainPage },
-    { path: '/detail/:id', component: DetailsPage },
+    // { path: '/detail/:id', component: DetailsPage },
     { path: '/turf', component: TurfManagement },
 ];
 const privateRoutes = [];
