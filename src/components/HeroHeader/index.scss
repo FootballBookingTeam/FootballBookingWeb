@@ -1,7 +1,8 @@
 .main__hero {
   position: relative;
-  padding-top: 45%;
-  overflow: hidden;
+  padding-top: 40%;
+  // overflow-x:visible;
+  // overflow-y:hidden;
 }
 
 .hero__info {
@@ -67,6 +68,8 @@
 }
 
 .hero__info-text {
+  display:inline;
+  color:white;
   margin-left: rem(20);
 }
 
@@ -80,11 +83,19 @@
   animation: slider-animation 24s ease-in-out infinite;
 }
 
-.search-bar {
-  border-radius:10rem;
-  background:#fff;
-  box-shadow:0 0 1rem rgba(0,0,0,0.15)
- }
+.hero__slide {
+  @extend %background-cover;
+
+  display: inline-block;
+  width: 33.333%;
+  height: 100%;
+}
+
+// .search-bar {
+//   border-radius:10rem;
+//   background:#fff;
+//   box-shadow:0 0 1rem rgba(0,0,0,0.15)
+//  }
  .search-bar .form-group {
   position:relative;
   margin-bottom:0
@@ -121,11 +132,6 @@ button, input {
 }
 
 
-.search-bar .form-group {
-  position: relative;
-  margin-bottom: 0;
-}
-
 .search-bar .form-control {
   height: calc(1.5em + 1rem + 2px);
 }
@@ -152,47 +158,21 @@ button, input {
   direction: ltr;
 }
 
-button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+
+.btn {
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: bold;
   cursor: pointer;
 }
 
-
-.btn {
-  letter-spacing: .3em;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
 .btn-block {
-  display:block;
+  display:inline-block;
   width:100%
  }
 
  .btn-primary {
-  color: #fff;
   background-color: #fc9600;
-  border-color: #fc9600;
-}
-
- .btn.btn-form-control {
-  color:#ced4da;
-  border-color:#ced4da;
-  color:#495057;
-  border:none;
-  font-size:1rem;
-  text-transform:none;
-  font-weight:normal;
-  letter-spacing:normal
- }
-
-
-
-.hero__slide {
-  @extend %background-cover;
-
-  display: inline-block;
-  width: 33.333%;
-  height: 100%;
 }
 
 
@@ -204,16 +184,16 @@ button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disab
 
   25%,
   30% {
-    transform: translateX(-33%);
+    transform: translateX(-33.333%);
   }
 
   50%,
   60% {
-    transform: translateX(-66%);
+    transform: translateX(-66.666%);
   }
 
   75%,
   80% {
-    transform: translateX(-33%);
+    transform: translateX(-33.333%);
   }
 }

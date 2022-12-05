@@ -12,9 +12,12 @@
 // Page Styles
 @import "../pages/MainPage/index.scss";
 // @import "../pages/DetailsPage/index.scss";
-
+@import "../pages/AuthPage/RegisterPage/index.scss";
 // Component Styles
 @import "../components/HeroHeader/index.scss";
+
+@import "../pages/AdminPage/TurfManagement/index.scss";
+@import "../components/InputText/index.scss";
 // @import "../components/RoomCard/index.scss";
 // @import "../components/MosaicHeader/index.scss";
 // @import "../components/RoomInfo/index.scss";

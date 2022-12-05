@@ -38,9 +38,9 @@ class HeroHeader extends Component {
   render() {
     return (
       <div>
-        <header className="main__hero">
+        <header className="main__hero ">
           <div className="hero__info">
-            <div className="hero__info-wrapper">
+            <div className="hero__info-wrapper ">
               <img
                 src="/images/hero-logo_white.svg"
                 alt="White space"
@@ -48,16 +48,16 @@ class HeroHeader extends Component {
               />
               <div className="hero__info-content">
                 <div className="hero__info-left">
-                  <img
+                  <a href='https://www.instagram.com/nmd0105/' target="_blank"><img
                     src="/images/hero-instagram-brands.svg"
                     alt="White space's instagram"
                     className="hero__info-social-icon"
-                  />
-                  <img
+                  /></a>
+                  <a href='https://www.facebook.com/taurusfbi04' target="_blank"><img
                     src="/images/hero-facebook-square-brands.svg"
                     alt="White space's facebook"
                     className="hero__info-social-icon"
-                  />
+                  /></a>
                 </div>
                 <div className="hero__info-right">
                   <div className="hero__info-item">
@@ -88,16 +88,16 @@ class HeroHeader extends Component {
               </div>
             </div>
           </div>
-          <div className="hero__slides">
+          <div className="hero__slides ">
             {this.state.urls.map((img, i) => (
               <div key={i} className="hero__slide" style={{ backgroundImage: `url(${img})` }} />
             ))}
           </div>
         </header>
         <div className="search-bar mt-4 p-3 p-lg-1 pl-lg-4">
-            <form id="main-search-form" action="/dat-san-online">
-              <input type="hidden" name="city_id" value="50"/>
-              <input type="hidden" name="input_type" value="string"/>
+            <form id="main-search-form" action="">
+              {/* <input type="hidden" name="city_id" value="50"/>
+              <input type="hidden" name="input_type" value="string"/> */}
               <div className="row">
                 <div className="col-lg-5 d-flex align-items-center form-group">
                   <input type="text" name="search_string" id="search-input" placeholder="Tên sân bóng" className="form-control border-0 shadow-0 ui-autocomplete-input" autocomplete="off"/>
@@ -109,7 +109,7 @@ class HeroHeader extends Component {
                   <input type="text" value="05:00" name="begin_time" title="Vào lúc" placeholder="Vào lúc" data-style="btn-form-control" className="form-control border-0 shadow-0 main-timepicker"/>
                 </div>
                 <div className="col-lg-2">
-                  <button type="submit" className="btn btn-primary btn-block rounded-xl h-100">Tìm kiếm</button>
+                  <button type="submit" className="btn btn-block btn-primary">Tìm kiếm</button>
                 </div>
               </div>
             </form>
