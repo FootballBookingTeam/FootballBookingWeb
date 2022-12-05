@@ -44,12 +44,19 @@ function DefaultLayout({ children }) {
                 >
                     <Space wrap>
                         <Dropdown.Button menu={menuProps} placement="bottom" icon={<UserOutlined />}>
-                            Dropdown
+                            Login
                         </Dropdown.Button>
                     </Space>
                 </Header>
                 <Content>{children}</Content>
-                <Footer>Footer</Footer>
+                <Footer
+                    style={{
+                        position: 'sticky',
+                        top: 0,
+                        zIndex: 1,
+                        width: '100%',
+                    }}
+                >Footer</Footer>
             </Layout>
         </>
     );

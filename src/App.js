@@ -4,15 +4,19 @@ import { Fragment } from 'react';
 
 // import GithubCorner from 'react-github-corner';
 
-import DetailsPage from './pages/DetailsPage';
+// import DetailsPage from './pages/DetailsPage';
 import ScrollToTop from './components/ScrollToTop';
 import MainPage from './pages/MainPage';
 import DefaultLayout from './layout/DefaultLayout';
 import TurfManagement from './pages/AdminPage/TurfManagement';
+import RegisterPage from './pages/AuthPage/RegisterPage'
+import LoginPage from './pages/AuthPage/LoginPage'
 const publicRoutes = [
     { path: '/', component: MainPage },
-    { path: '/detail/:id', component: DetailsPage },
+    // { path: '/detail/:id', component: DetailsPage },
     { path: '/turf', component: TurfManagement },
+    { path: '/register', component: RegisterPage},
+    { path: '/login', component: LoginPage},
 ];
 const privateRoutes = [];
 function App() {
@@ -44,7 +48,7 @@ function App() {
                                 />
                             );
                         })}
-                        <Route path="/detail/:id" element={<DetailsPage />} />
+                        {/* <Route path="/detail/:id" element={<DetailsPage />} /> */}
                     </Routes>
                 </ScrollToTop>
             </div>
