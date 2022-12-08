@@ -4,8 +4,7 @@ import FormInput from "../../../components/InputText";
 function RegisterPage () {
   const [values, setValues] = useState({
     username: "",
-    email: "",
-    birthday: "",
+    phone: "",
     password: "",
     confirmPassword: "",
   });
@@ -22,24 +21,21 @@ function RegisterPage () {
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
     },
+
     {
       id: 2,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
-      label: "Email",
+      name: "phone",
+      type: "text",
+      placeholder: "phone",
+      label: "phone",
+      errorMessage:
+        "Invalid phone number!",
+      pattern: `^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$`,
       required: true,
+
     },
     {
       id: 3,
-      name: "birthday",
-      type: "date",
-      placeholder: "Birthday",
-      label: "Birthday",
-    },
-    {
-      id: 4,
       name: "password",
       type: "password",
       placeholder: "Password",
@@ -50,7 +46,7 @@ function RegisterPage () {
       required: true,
     },
     {
-      id: 5,
+      id: 4,
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",

@@ -4,3 +4,26 @@
     bottom: .75rem;
     left: 1.25rem;
 }
+.turf-cards {
+    margin-bottom: rem(60);
+  }
+  
+  .turf-cards__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(58) rem(22);
+  
+    @include media('below-desktop') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    @include media('below-tablet') {
+      grid-template-columns: 1fr;
+      row-gap: rem(25);
+    }
+  }
+  .turf-container{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+  }
