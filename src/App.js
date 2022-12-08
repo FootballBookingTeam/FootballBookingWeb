@@ -9,11 +9,12 @@ import ScrollToTop from './components/ScrollToTop';
 import MainPage from './pages/MainPage';
 import DefaultLayout from './layout/DefaultLayout';
 import TurfManagement from './pages/AdminPage/TurfManagement';
+import TurfSchedule from './pages/AdminPage/TurfSchedule';
 import RegisterPage from './pages/AuthPage/RegisterPage'
 import LoginPage from './pages/AuthPage/LoginPage'
 const publicRoutes = [
     { path: '/', component: MainPage },
-    // { path: '/detail/:id', component: DetailsPage },
+    { path: '/turf/:id', component: TurfSchedule },
     { path: '/turf', component: TurfManagement },
     { path: '/register', component: RegisterPage},
     { path: '/login', component: LoginPage},
