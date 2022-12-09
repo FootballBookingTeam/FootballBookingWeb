@@ -1,83 +1,83 @@
 // import React, { Component } from 'react';
 
-// import InfoSkeleton from '../../components/RoomInfo/skeleton';
+// // import InfoSkeleton from '../../components/TurfInfo/skeleton';
 // import MosaicSkeleton from '../../components/MosaicHeader/skeleton';
 
 // import MosaicHeader from '../../components/MosaicHeader/index';
-// import RoomInfo from '../../components/RoomInfo/index';
-// import RoomAmenities from '../../components/RoomAmenities/index';
-// import BookingCard from '../../components/BookingCard/index';
-// import { apiGetSingleRoom } from '../../api';
+// // import TurfInfo from '../../components/TurfInfo/index';
+// // import TurfAmenities from '../../components/TurfAmenities/index';
+// // import BookingCard from '../../components/BookingCard/index';
+// import { apiGetSingleTurf } from '../../API/apiaxios';
 
 // class DetailsPage extends Component {
 //   state = {
-//     currentRoom: [],
+//     currentTurf: [],
 //     bookingData: [],
-//     roomIsLoading: true,
+//     TurfIsLoading: true,
 //   };
 
 //   componentDidMount() {
-//     this.getCurrentRoomData();
+//     this.getCurrentTurfData();
 //   }
 
-//   getCurrentRoomData = async () => {
+//   getCurrentTurfData = async () => {
 //     const { location } = this.props;
 
 //     try {
-//       const response = await apiGetSingleRoom(location.state.roomID);
+//       const response = await apiGetSingleTurf(location.state);
 
 //       this.setState({
-//         currentRoom: response.data.room[0],
+//         currentTurf: response.data.Turf[0],
 //         bookingData: response.data.booking,
 //       });
 //     } catch (e) {
-//       console.error(`🚫 Something went wrong fetching API calls on this room: ${e}`);
+//       console.error(`🚫 Something went wrong fetching API calls on this Turf: ${e}`);
 //     }
 
-//     this.setState({ roomIsLoading: false });
+//     this.setState({ TurfIsLoading: false });
 //   };
 
 //   refreshBookingData = async () => {
 //     const { location } = this.props;
 
 //     try {
-//       const response = await apiGetSingleRoom(location.state.roomID);
+//       const response = await apiGetSingleTurf(location.state.TurfID);
 
 //       this.setState({
 //         bookingData: response.data.booking,
 //       });
 //     } catch (e) {
-//       console.error(`🚫 Something went wrong fetching API calls on this room: ${e}`);
+//       console.error(`🚫 Something went wrong fetching API calls on this Turf: ${e}`);
 //     }
 //   };
 
 //   render() {
 //     const { location } = this.props;
-//     const { roomID } = location.state;
-//     const { currentRoom, bookingData, roomIsLoading } = this.state;
-//     const { name, imageUrl, amenities, normalDayPrice, holidayPrice } = currentRoom;
+//     const { TurfID } = location.state;
+//     const { currentTurf, TurfIsLoading } = this.state;
+//     const { name, imageUrl } = currentTurf;
 
 //     return (
 //       <div className="container wrapper-l">
-//         {roomIsLoading ? <MosaicSkeleton /> : <MosaicHeader name={name} images={imageUrl} />}
-//         <main className="main">
+//         {TurfIsLoading ? <MosaicSkeleton /> : <MosaicHeader name={name} images={imageUrl} />}
+//         {/* <main className="main">
 //           <div className="wrapper-m main__wrapper">
 //             <section className="main__left">
-//               {roomIsLoading ? <InfoSkeleton /> : <RoomInfo data={currentRoom} />}
-//               <RoomAmenities amenities={amenities} />
-//             </section>
-//             <section className="main__right">
+//               {TurfIsLoading ? <InfoSkeleton /> : <TurfInfo data={currentTurf} />}
+//               <TurfAmenities amenities={amenities} />
+//             </section> */}
+//             {/* <section className="main__right">
 //               <BookingCard
-//                 roomIsLoading={roomIsLoading}
+//                 TurfIsLoading={TurfIsLoading}
 //                 normalDayPrice={normalDayPrice}
 //                 holidayPrice={holidayPrice}
-//                 roomID={roomID}
+//                 TurfID={TurfID}
 //                 bookingData={bookingData}
 //                 refreshBookingData={this.refreshBookingData}
 //               />
-//             </section>
-//           </div>
-//         </main>
+//             </section> */}
+//           {/* </div> */}
+//     {/* //     </main> */}
 //       </div>
 //     );
 //   }

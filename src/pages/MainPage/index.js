@@ -45,7 +45,7 @@ class MainPage extends Component {
                         {/* <Ellipsis color="#fff" /> */}
                     </div>
                 )}
-                <div className={`container wrapper-l ${!allDownloaded ? 'is-loading' : ''}`}>
+                <div className={`container-fluid ${!allDownloaded ? 'is-loading' : ''}`}>
                     <HeroHeader setSlidesAreLoaded={this.setSlidesAreLoaded} />
                     <div className="turf-cards">
                         <div className="turf-cards__list">

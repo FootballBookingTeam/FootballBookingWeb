@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Dropdown, Modal, Space, Form, Input, Radio, Select, Rate, Upload, InputNumber } from 'antd';
 import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
-import {apiUpdateSingleTurf ,apiDeleteSingleTurf } from '../../API/apiaxios';
+import {apiUpdateSingleTurf ,apiDeleteSingleTurf, apiGetImageTurf } from '../../API/apiaxios';
 import UploadImage from '../../API/imageService';
 
 const TurfCard = ({ data, admin = false }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const [images, setImage] = useState('');
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -42,19 +42,30 @@ const TurfCard = ({ data, admin = false }) => {
         }
     };
     upTurfs();
-    }
-
+    };
+    const getImageTurfsData = async (data,image) => {
+        try {
+            
+            const response = await apiGetImageTurf(data,image);
+            setImage({ images: response.data[0]['image'] })
+        } catch (e) {
+            console.error(`🚫 Something went wrong fetching API calls: ${e}`);
+        }
+    };
+    getImageTurfsData(data.id)
     const [imageURLs, setImageURLs] = useState([]);
     const handleImage = (e) => {
       const files = e.target.files;
       UploadImage(files, setImageURLs);
   };
+  
+  
     return (
         <div className="turf-card">
             <div
                 className="turf-card__wrapper"
                 style={{
-                    backgroundImage: `url("https://blog.yousport.vn/wp-content/uploads/2018/09/san-bong-bach-viet-2.jpg"), linear-gradient(to right, #e4e4e4, #f8f8f8)`,
+                    backgroundImage: `url(${images.images}), linear-gradient(to right, #e4e4e4, #f8f8f8)`,
                 }}
             >
                 <div

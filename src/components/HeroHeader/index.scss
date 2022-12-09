@@ -3,6 +3,7 @@
   padding-top: 40%;
   // overflow-x:visible;
   // overflow-y:hidden;
+  overflow: hidden;
 }
 
 .hero__info {
@@ -100,16 +101,16 @@
   position:relative;
   margin-bottom:0
  }
- .search-bar .form-group::after {
-  display:block;
-  width:1px;
-  height:60%;
-  content:'';
-  background:#ddd;
-  position:absolute;
-  top:20%;
-  right:0
- }
+//  .search-bar .form-group::after {
+//   // display:block;
+//   width:1px;
+//   height:60%;
+//   content:'';
+//   background:#ddd;
+//   // position:absolute;
+//   top:20%;
+//   right:0
+//  }
 
 *, ::before, ::after {
   box-sizing: border-box;
@@ -184,16 +185,16 @@ button, input {
 
   25%,
   30% {
-    transform: translateX(-33.333%);
+    transform: translateX(-33%);
   }
 
   50%,
   60% {
-    transform: translateX(-66.666%);
+    transform: translateX(-66%);
   }
 
   75%,
   80% {
-    transform: translateX(-33.333%);
+    transform: translateX(-33%);
   }
 }
