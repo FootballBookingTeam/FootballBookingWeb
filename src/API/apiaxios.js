@@ -14,4 +14,5 @@ export const apiGetSingleTurf = (id) => turfRequest.get(`/turfs/${id}`);
 export const apiAddSingleTurf = (data) => turfRequest.post(`/turfs`,data);
 export const apiUpdateSingleTurf = (id,data) => turfRequest.put(`/turfs/${id}`,data);
 export const apiDeleteSingleTurf = (id) => turfRequest.delete(`/turfs/${id}`);
+export const apiGetImageTurf = (id,image) => turfRequest.get(`/turfs/${id}/images`);
 // export const apiPostBookingData = (id, data) => turfRequest.post(`/room/${id}`, data);

@@ -1,34 +1,35 @@
 import React from 'react';
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+import { DownOutlined, UserOutlined, HomeOutlined } from '@ant-design/icons';
 import { Button, Dropdown, message, Space, Tooltip } from 'antd';
 
 import { Layout } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
+function handleMenuClick(e,e1) {
 
-const handleMenuClick = (e) => {
-    message.info('Click on menu item.');
-    console.log('click', e);
 };
 const items = [
     {
-        label: '1st menu item',
+        label: 'Home',
         key: '1',
-        icon: <UserOutlined />,
+        icon: <HomeOutlined />,
+        url: `/register`,
     },
     {
-        label: '2nd menu item',
+        label: 'Login',
         key: '2',
         icon: <UserOutlined />,
+        url: `/login`,
     },
     {
-        label: '3rd menu item',
+        label: 'Register',
         key: '3',
         icon: <UserOutlined />,
+        url: '/register'
     },
 ];
 const menuProps = {
     items,
-    onClick: handleMenuClick,
+    onClick: handleMenuClick(items.url,items.element),
 };
 function DefaultLayout({ children }) {
     return (
@@ -44,7 +45,7 @@ function DefaultLayout({ children }) {
                 >
                     <Space wrap>
                         <Dropdown.Button menu={menuProps} placement="bottom" icon={<UserOutlined />}>
-                            Login
+                            Home
                         </Dropdown.Button>
                     </Space>
                 </Header>
