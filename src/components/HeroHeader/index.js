@@ -109,7 +109,7 @@ class HeroHeader extends Component {
                   <input type="text" value="05:00" name="begin_time" title="Vào lúc" placeholder="Vào lúc" data-style="btn-form-control" className="form-control border-0 shadow-0 main-timepicker"/>
                 </div>
                 <div className="col-lg-2">
-                  <button type="submit" className="btn btn-block btn-primary">Tìm kiếm</button>
+                  <button type="submit" className="btn1 btn1-block btn1-primary">Tìm kiếm</button>
                 </div>
               </div>
             </form>

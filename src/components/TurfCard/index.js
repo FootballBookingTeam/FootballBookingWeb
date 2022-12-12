@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Dropdown, Modal, Space, Form, Input, Radio, Select, Rate, Upload, InputNumber } from 'antd';
 import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
@@ -43,22 +43,25 @@ const TurfCard = ({ data, admin = false }) => {
     };
     upTurfs();
     };
-    const getImageTurfsData = async (data,image) => {
+    const getImageTurfsData = async (data) => {
         try {
             
-            const response = await apiGetImageTurf(data,image);
+            const response = await apiGetImageTurf(data);
             setImage({ images: response.data[0]['image'] })
         } catch (e) {
             console.error(`🚫 Something went wrong fetching API calls: ${e}`);
         }
+        console.log(data)
     };
-    getImageTurfsData(data.id)
     const [imageURLs, setImageURLs] = useState([]);
     const handleImage = (e) => {
       const files = e.target.files;
       UploadImage(files, setImageURLs);
   };
-  
+  useEffect(() => {
+    getImageTurfsData(data.id)
+
+  }, [data]);
   
     return (
         <div className="turf-card">

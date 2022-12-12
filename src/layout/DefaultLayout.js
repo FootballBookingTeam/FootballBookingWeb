@@ -1,37 +1,36 @@
 import React from 'react';
 import { DownOutlined, UserOutlined, HomeOutlined } from '@ant-design/icons';
-import { Button, Dropdown, message, Space, Tooltip } from 'antd';
-
+import { Button, Dropdown, message, Space, Tooltip, Item } from 'antd';
+import { Link } from 'react-router-dom';
 import { Layout } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
-function handleMenuClick(e,e1) {
 
-};
+function DefaultLayout({ children }) {
+    const { Header, Footer, Sider, Content } = Layout;
+    // function handleClick(e){
+    // }
 const items = [
     {
-        label: 'Home',
+        label: (<Link to={`/`} style={{textDecoration:"none"}}>Home</Link>),
         key: '1',
         icon: <HomeOutlined />,
-        url: `/register`,
+        path: `/`,
     },
     {
-        label: 'Login',
+        label: (<Link to={`/login`} style={{textDecoration:"none"}} >Login</Link>),
         key: '2',
         icon: <UserOutlined />,
-        url: `/login`,
+        path: `/login`,
     },
     {
-        label: 'Register',
+        label: (<Link to={`/register`} style={{textDecoration:"none"}}>Register</Link>),
         key: '3',
         icon: <UserOutlined />,
-        url: '/register'
+        path: '/register'
     },
 ];
 const menuProps = {
     items,
-    onClick: handleMenuClick(items.url,items.element),
 };
-function DefaultLayout({ children }) {
     return (
         <>
             <Layout>
@@ -45,9 +44,10 @@ function DefaultLayout({ children }) {
                 >
                     <Space wrap>
                         <Dropdown.Button menu={menuProps} placement="bottom" icon={<UserOutlined />}>
-                            Home
+                            Football Booking
                         </Dropdown.Button>
                     </Space>
+                    
                 </Header>
                 <Content>{children}</Content>
                 <Footer

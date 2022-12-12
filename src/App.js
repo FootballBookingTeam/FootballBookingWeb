@@ -7,7 +7,7 @@ import { Fragment } from 'react';
 // import DetailsPage from './pages/DetailsPage';
 import ScrollToTop from './components/ScrollToTop';
 import MainPage from './pages/MainPage';
-// import DetailsPage from './pages/DetailsPage'
+import DetailsPage from './pages/DetailsPage'
 import DefaultLayout from './layout/DefaultLayout';
 import TurfManagement from './pages/AdminPage/TurfManagement';
 import TurfSchedule from './pages/AdminPage/TurfSchedule';
@@ -15,7 +15,7 @@ import RegisterPage from './pages/AuthPage/RegisterPage'
 import LoginPage from './pages/AuthPage/LoginPage'
 const publicRoutes = [
     { path: '/', component: MainPage },
-    // { path: '/details/:id', component: DetailsPage},
+    { path: '/details/:id', component: DetailsPage},
     { path: '/turf/:id', component: TurfSchedule },
     { path: '/turf', component: TurfManagement },
     { path: '/register', component: RegisterPage},
