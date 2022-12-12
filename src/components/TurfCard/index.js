@@ -92,7 +92,7 @@ const TurfCard = ({ data, admin = false }) => {
                         </h2>
                         <div className="turf-card__prices">
                             Giá: {data.price} VNĐ/1h
-                            <div className="turf-card__price-s--gray">Loại sân: {data.type}</div>
+                            <div className="turf-card__price-s--gray">Loại sân: {data.type.slice(4,6)} người</div>
                             <div className=" turf-card__price-s--gray">Rating: {data.rating} ⭐</div>
                             {admin && (
                                 <div className=" turf-card__price-s--gray">
