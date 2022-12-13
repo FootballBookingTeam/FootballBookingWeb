@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import { Fragment } from 'react';
 
 // import GithubCorner from 'react-github-corner';
@@ -7,22 +7,25 @@ import { Fragment } from 'react';
 // import DetailsPage from './pages/DetailsPage';
 import ScrollToTop from './components/ScrollToTop';
 import MainPage from './pages/MainPage';
-import DetailsPage from './pages/DetailsPage'
+import DetailsPage from './pages/DetailsPage';
 import DefaultLayout from './layout/DefaultLayout';
 import TurfManagement from './pages/AdminPage/TurfManagement';
 import TurfSchedule from './pages/AdminPage/TurfSchedule';
-import RegisterPage from './pages/AuthPage/RegisterPage'
-import LoginPage from './pages/AuthPage/LoginPage'
+import RegisterPage from './pages/AuthPage/RegisterPage';
+import LoginPage from './pages/AuthPage/LoginPage';
 const publicRoutes = [
     { path: '/', component: MainPage },
-    { path: '/details/:id', component: DetailsPage},
+    { path: '/details/:id', component: DetailsPage },
     { path: '/turf/:id', component: TurfSchedule },
     { path: '/turf', component: TurfManagement },
-    { path: '/register', component: RegisterPage},
-    { path: '/login', component: LoginPage},
+    { path: '/register', component: RegisterPage },
+    { path: '/login', component: LoginPage },
 ];
 const privateRoutes = [];
 function App() {
+
+    const items = JSON.parse(localStorage.getItem('items'));
+
     return (
         // <MainPage/>
         <Router>
@@ -51,7 +54,11 @@ function App() {
                                 />
                             );
                         })}
-                        {/* <Route path="/detail/:id" element={<DetailsPage />} /> */}
+                        {/* {items.jwt ? (
+                            <Route path="*" element={<Navigate to="/" replace />} />
+                        ) : (
+                            <Route path="*" element={<Navigate to="/login" replace />} />
+                        )} */}
                     </Routes>
                 </ScrollToTop>
             </div>
@@ -59,6 +66,5 @@ function App() {
     );
 }
 export default App;
-
 
 //test

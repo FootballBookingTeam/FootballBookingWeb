@@ -11,6 +11,8 @@ import {
 } from '@mobiscroll/react';
 import '@mobiscroll/react/dist/css/mobiscroll.scss';
 import { useState, useEffect } from 'react';
+import { apiSchedules } from '../../../API/apiaxios';
+import { Link, useParams } from 'react-router-dom';
 
 setOptions({
     theme: 'ios',
@@ -18,17 +20,31 @@ setOptions({
 });
 
 function TurfSchedule() {
+    const { id } = useParams();
+
     const [view, setView] = useState('month');
     const [myEvents, setEvents] = useState([]);
 
     useEffect(() => {
-        getJson(
-            'https://trial.mobiscroll.com/events/?vers=6',
-            (events) => {
-                setEvents(events);
-            },
-            'jsonp',
-        );
+        const schedule = async () => {
+            try {
+                const response = await apiSchedules();
+                const data = response.data
+                    .filter((data) => data.turf == id)
+                    .map((data) => ({
+                        color: '#ff6d42',
+                        start: data.start_time,
+                        end: data.end_time,
+                        title: `Sân ${data.turf} , Tổng tiền: ${data.total_price}`,
+                    }));
+                console.log(data);
+
+                setEvents(data);
+            } catch (e) {
+                console.error(`🚫 Something went wrong fetching API calls: ${e}`);
+            }
+        };
+        schedule();
     }, []);
 
     const [calView, setCalView] = useState({
