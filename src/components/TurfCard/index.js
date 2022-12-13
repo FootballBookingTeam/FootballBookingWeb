@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Dropdown, Modal, Space, Form, Input, Radio, Select, Rate, Upload, InputNumber } from 'antd';
 import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
-import { apiUpdateSingleTurf, apiDeleteSingleTurf, apiGetImageTurf } from '../../API/apiaxios';
+import { apiUpdateSingleTurf, apiDeleteSingleTurf, apiGetImageTurf,apiAddImageTurf } from '../../API/apiaxios';
 import UploadImage from '../../API/imageService';
 
 const TurfCard = ({ data, admin = false }) => {
@@ -33,9 +33,10 @@ const TurfCard = ({ data, admin = false }) => {
     const updateTurfs = (value, id) => {
         const data = { name: value.name, type: value.type, price: value.price, rating: value.rating };
 
-        const upTurfs = async () => {
+        const updateTurfs = async () => {
             try {
                 const response = await apiUpdateSingleTurf(id, data);
+                await apiAddImageTurf(id,{image:imageURLs[0]})
                 // setTurfs(response.data);
             } catch (e) {
                 console.error(`🚫 Something went wrong fetching API calls: ${e}`);
@@ -43,7 +44,7 @@ const TurfCard = ({ data, admin = false }) => {
         };
         setIsModalOpen(false);
 
-        upTurfs();
+        updateTurfs();
     };
     const getImageTurfsData = async (data) => {
         try {
