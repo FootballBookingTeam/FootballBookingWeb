@@ -27,6 +27,11 @@ const items = [
         icon: <UserOutlined />,
         path: '/register'
     },
+    {
+        label: (<Link to={`/turf`} style={{textDecoration:"none"}}>Turfs</Link>),
+        key: '4',
+        icon: <UserOutlined />,
+    },
 ];
 const menuProps = {
     items,
@@ -49,15 +54,14 @@ const menuProps = {
                     </Space>
                     
                 </Header>
-                <Content>{children}</Content>
-                <Footer
-                    style={{
-                        position: 'sticky',
-                        top: 0,
-                        zIndex: 1,
+                <Content style={{
+                       
                         width: '100%',
-                    }}
-                >Footer</Footer>
+                        height:'90vh'
+                    }}>{children}</Content>
+                <Footer
+                    
+                ></Footer>
             </Layout>
         </>
     );

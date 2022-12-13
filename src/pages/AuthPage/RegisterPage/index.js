@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FormInput from "../../../components/InputText";
-
+import { apiRegister } from '../../../API/apiaxios'
+import { useNavigate } from "react-router-dom";
 function RegisterPage () {
   const [values, setValues] = useState({
     username: "",
@@ -56,9 +57,22 @@ function RegisterPage () {
       required: true,
     },
   ];
+  const navigate=useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const register = async () => {
+      try {
+          const response = await apiRegister(values);
+          if(response.status==200)
+          {
+            navigate("/login")
+          }
+      } catch (e) {
+          console.error(`🚫 Something went wrong fetching API calls: ${e}`);
+      }
+  };
+  register();
   };
 
   const onChange = (e) => {

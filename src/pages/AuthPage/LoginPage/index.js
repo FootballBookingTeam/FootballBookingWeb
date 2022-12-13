@@ -1,5 +1,7 @@
 import { useState } from "react";
 import FormInput from "../../../components/InputText";
+import { apiLogin } from '../../../API/apiaxios'
+import { useNavigate } from "react-router-dom";
 
 function LoginPage () {
   const [values, setValues] = useState({
@@ -34,9 +36,23 @@ function LoginPage () {
       required: true,
     },
   ];
-
+const navigate=useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
+    const login = async () => {
+      try {
+          const response = await apiLogin(values);
+          localStorage.setItem('login', JSON.stringify(response.data));
+          if(response.status==200)
+          {
+            navigate("/")
+          }
+          // setTurfs(response.data);
+      } catch (e) {
+          console.error(`🚫 Something went wrong fetching API calls: ${e}`);
+      }
+  };
+  login();
   };
 
   const onChange = (e) => {
@@ -56,7 +72,7 @@ function LoginPage () {
           />
         ))}
         <p align='center'>
-        <button className="button">Login</button>
+        <button className="button" >Login</button>
         </p>
       </form>
     </div>
