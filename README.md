@@ -1,8 +1,19 @@
-# Getting Started with Create React App
+# 19N12 - Team 7 - Sports: Football Turf Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [ReactJS](https://github.com/facebook/react).
+
+
+# Link:
+BackEnd: https://github.com/FootballBookingTeam/football-api
+FrontEnd: https://github.com/FootballBookingTeam/FootballBookingWeb
+Slide: https://bom.so/2QT0Ib
+Demo: 
 
 ## Available Scripts
+
+Install node modules:
+
+### `npm install`
 
 In the project directory, you can run:
 
@@ -68,3 +79,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Team 7:
+* [Đinh Hoàng Đạt - Project Management, Database ](https://www.facebook.com/profile.php?id=100010890990022)
+* [Nguyễn Mạnh Đức - FrontEnd ](https://www.facebook.com/taurusfbi04)
+* [Quách Minh Nhật - FrontEnd ](https://www.facebook.com/rum.quach.3)
+* [Bùi Ngọc Thịnh - BackEnd ](https://www.facebook.com/thinh.buingoc.96)
+* [Nguyễn Văn Vĩnh - BackEnd ](https://www.facebook.com/vinh2310)
+* [Phạm Sỹ Hoàng - DevOps ](https://www.facebook.com/vuive.nhox.5)
